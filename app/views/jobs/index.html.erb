@@ -1,15 +1,120 @@
 
+<style media="screen">
+thead{
+  font-weight: bold;
+  font-size: 16px;
+  color:white;
+  background: #312e32;
+}
+tbody{
+  background-color: rgba(198,200,200,0.2);
+}
+
+
+
+.bannerbox{
+  width: 100%;
+  overflow: auto;
+  position: relative;
+  background-color: grey;
+  height: 660px;
+}
+img{
+width:100%;
+margin: 0 auto;
+position: absolute;
+top: 0;
+height: 100%;
+}
+
+.textevey{
+font-size: 60px;
+font-weight: bold;
+text-align: center;
+color: #312f32;
+position: relative;
+z-index: 3;
+
+}
+.smalltext{
+font-size: 19px;
+position: relative;
+z-index: 3;
+color:white;
+text-align: center;
+margin-top: 20px;
+text-shadow: 1px 1px 1px black;
+
+}
+.smalltext:hover{color:#34f8ee;}
+.cyan{
+color: #339d8d;
+}
+
+@media(max-width:800px){
+.text{
+  font-size:50px;
+}
+}
+
+@media(max-width:500px){
+.text{
+font-size:36px;
+}
+}
+
+@media(max-width:800px){
+.bannerbox{
+  height:500px;
+}
+}
+@media(max-width:500px){
+.bannerbox{
+height:350px;
+}
+}
+</style>
+
+<!-- bannerbegin-->
+
+
+<div class="bannerbox">
+  <div class="banner">
+
+    <div class="textevey">
+      BUILDING <span class="cyan">CAREERS</span>,
+
+<br>LEADING TO <span class="cyan">SUCCESS</span>.
+    </div>
+
+    <div class="smalltext">
+      Xinshengdaxue’s employment site. Search jobs in Xinshengdaxue.
+
+<br>Find work or recruit the ideal candidate.
+    </div>
+
+    <div class="image">
+        <img src="http://img1.juimg.com/141115/330394-14111511301079.jpg" >
+    </div>
+
+  </div>
+
+</div>
+
+<!-- banner end-->
+
+
 <div class="dropdown clearfix pull-right">
 
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-exapanded="true">
-  排序
+  Order
     <span class="caret"></span>
   </button>
 
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-    <li> <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %> </li>
-    <li> <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %> </li>
-    <li> <%= link_to("按照发表时间排序", jobs_path) %> </li>
+    <li> <%= link_to("By Lower Bound", jobs_path(:order => "by_lower_bound")) %> </li>
+    <li> <%= link_to("By Upper Bound", jobs_path(:order => "by_upper_bound")) %> </li>
+    <li> <%= link_to("By Created Time", jobs_path) %> </li>
   </ul>
 
 
@@ -17,12 +122,9 @@
 
 
 
+<table class="table table-boldered table-inverse">
 
-
-
-<table class="table table-boldered">
-
-<thead>
+<thead class="thead-inverse">
 
 <tr>
   <td>Job Title</td>

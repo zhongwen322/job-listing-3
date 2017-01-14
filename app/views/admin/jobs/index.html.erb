@@ -1,6 +1,6 @@
 <style media="screen">
 .btn-evey{
-background-color: skyblue;
+
 width: 60px;
 font-weight: bold;
 
@@ -9,12 +9,21 @@ font-weight: bold;
 background-color: #051754;
 color: white;
 }
-.btn-add-a-job:hover{
-  background-image: -moz-linear-gradient( 90deg, rgb(26,46,111) 0%, rgb(186,245,242) 100%);
-  background-image: -webkit-linear-gradient( 90deg, rgb(26,46,111) 0%, rgb(186,245,242) 100%);
-  background-image: -ms-linear-gradient( 90deg, rgb(26,46,111) 0%, rgb(186,245,242) 100%);
-  color: white;
+thead{
+  font-weight: bold;
+  font-size: 16px;
+  color:white;
+  background: #312e32;
 }
+tbody{
+  background-color: rgba(198,200,200,0.2);
+  color: #312e32;
+}
+tbody:hover{
+  color:black;
+}
+
+
 </style>
 
 
@@ -22,7 +31,7 @@ color: white;
 
 
 <div class="pull-right">
-  <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default btn-add-a-job") %>
+  <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default") %>
 </div>
 <br>
 <br>
