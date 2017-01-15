@@ -1,9 +1,13 @@
 <style media="screen">
+.outsidebox{
+  position:relative;
+}
   .box-a,.box-b,.box-c,.box-d,.box-e,.box-f{
 width:100%;
 height:675px;
 overflow: auto;
-background-image: url();
+clear:both;
+
   }
   .grey{
     background-color: grey;
@@ -22,87 +26,202 @@ margin-top: 160px;
     color:white;
     text-align: center;
   }
+  .box-a{
+    background-image: url(http://eskipaper.com/images/black-backgrounds-11.jpg);
+    background-size: cover;
+  }
+  .b-textbox{
+    width: 510px;
+    height: 523px;
+    background-color: #181818;
+    margin-top: 76px;
+    margin-left: 80px;
+    padding-top: 100px;
+  }
+  .b-textbox:hover{
+    background-color: rgba(0,0,0,0.7);
+  }
+  .b-p{
+    color: #a5a5a4;
+    text-align: left;
+  }
+  .b-textboxinvisible{
+    width:332px;
+
+    margin-left: 60px;
+
+  }
+.small-title{
+  color:white;
+  font-size:48px;
+}
+.box-b{
+  background-image: url(http://www.brainscape.com/blog/wp-content/uploads/2015/07/success.jpg );
+  background-size: cover;
+}
+.box-c{
+  background-image: url(https://assets.entrepreneur.com/content/16x9/822/20150724190206-success-focus-life-achievements.jpeg
+);
+background-size: cover;
+}
+.box-c-textbox{
+  background-color: rgba(0,0,0,0.7);
+  border: 10px solid white;
+  margin-left: 550px;
+  margin-top: 105px;
+  padding: 20px;
+}
+.box-c-textbox:hover{
+  background-color: #181818;
+
+}
+.box-c-textbox-invisible{
+  width:80%;
+  text-align: center;
+  font-size: 18px;
+  color: #d9d9d9;
+  margin: 0 auto;
+}
+.eveybtn:hover{
+  background-color: black;
+}
 </style>
 
+<div class="outsidebox">
 
-<!-- BOXA-->
-<div class="box-a grey">
-  <div class="a">
-    BUILDING CAREERS,
-    <br>LEADING TO SUCCESS.
+  <!-- BOXA-->
+  <div class="box-a grey">
+    <div class="a">
+      BUILDING CAREERS,
+      <br>LEADING TO SUCCESS.
+      </div>
+  <p>
+  Career Partners ——Xinshengdaxue’s employment site.
+  <br>Search jobs at Career Partners. Find work or recruit the ideal candidates.
+  </p>
+
+  </div>
+      <!--BOXA-end -->
+
+
+
+  <!--BOXB -->
+  <div class="box-b blue">
+
+<div class="b-textbox">
+  <div class="b-textboxinvisible">
+  <div class="b-title">
+    <span style="color:white; font-size:18px;">Xinshengdaxue</span>
+  </div>
+  <div class="small-title">
+    CAREER <br>PARTNERS
+  </div>
+
+    <p class="b-p" style="font-size: 18px;">
+Career Partners is Xinshengdaxue’s
+employment site. Not only can you
+search jobs and recruit the ideal
+candidates, but also find more about
+Ruby on Rails and your career path.
+    </p>
+</div>
+
+</div>
+
+  </div>
+      <!--BOXEB-end -->
+
+
+
+  <!--BOXC -->
+  <div class="box-c grey">
+<div class="box-c-textbox" style="width:620px;height:464px;">
+  <div class="box-c-textbox-invisible">
+
+      <h1>CAREER PARTNERS</h1>
+
+<br>PHONE:
+<br>+64 27 3196 191
+
+<br><br>EMAIL:
+<br>zhongwen322@gmail.com
+
+<br><br>WECHAT:
+<br>zhongweninri
+<br><br>
+<button type="button" name="button" class="btn btn-default eveybtn" style="background-color:#181818; font-size:20px; color:#a5a4a4;">
+Email Us
+</button>
+
+  </div>
+</div>
+  </div>
+      <!--BOXC-end -->
+
+
+  <!-- BOXD-->
+  <div class="box-d blue">
+
+  </div>
+      <!--BOXD-end -->
+
+
+  <!--BOXE -->
+  <div class="box-e grey">
+    <div class="dropdown clearfix pull-right">
+
+      <button class="btn btn-default dropdown-toggle orderevey" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-exapanded="true">
+      Order
+        <span class="caret"></span>
+      </button>
+
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+        <li> <%= link_to("By Lower Bound", jobs_path(:order => "by_lower_bound")) %> </li>
+        <li> <%= link_to("By Upper Bound", jobs_path(:order => "by_upper_bound")) %> </li>
+        <li> <%= link_to("By Created Time", jobs_path) %> </li>
+      </ul>
+
+
     </div>
-<p>
-Career Partners ——Xinshengdaxue’s employment site.
-<br>Search jobs at Career Partners. Find work or recruit the ideal candidates.
-</p>
+
+    <h1 style="line-height:60px;">Job Listing</h1>
 
 
+    <table class="table table-boldered table-inverse">
 
-</div>
-<!--BOXB -->
-<div class="box-b blue">
+    <thead class="thead-inverse">
 
-</div>
-<!--BOXC -->
-<div class="box-c grey">
+    <tr>
+      <td>Job Title</td>
+      <td>Minimum Salary</td>
+      <td>Maximum Salary</td>
+      <td>Created at</td>
+    </tr>
 
-</div>
-<!-- BOXD-->
-<div class="box-d blue">
+    </thead>
 
-</div>
-<!--BOXE -->
-<div class="box-e grey">
-  <div class="dropdown clearfix pull-right">
 
-    <button class="btn btn-default dropdown-toggle orderevey" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-exapanded="true">
-    Order
-      <span class="caret"></span>
-    </button>
+    <tbody>
+      <% @jobs.each do |job| %>
 
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-      <li> <%= link_to("By Lower Bound", jobs_path(:order => "by_lower_bound")) %> </li>
-      <li> <%= link_to("By Upper Bound", jobs_path(:order => "by_upper_bound")) %> </li>
-      <li> <%= link_to("By Created Time", jobs_path) %> </li>
-    </ul>
+      <tr>
+        <td><%= link_to(job.title, job_path(job))%></td>
+        <td><%= job.wage_lower_bound %></td>
+        <td><%= job.wage_upper_bound %></td>
+        <td><%= job.created_at %></td>
+      </tr>
+
+    </tbody>
+      <% end %>
+    </table>
 
 
   </div>
+    <!--BOXE-end -->
+  <!--BOXF -->
+  <div class="box-f blue">
 
-  <h1 style="line-height:60px;">Job Listing</h1>
-
-
-  <table class="table table-boldered table-inverse">
-
-  <thead class="thead-inverse">
-
-  <tr>
-    <td>Job Title</td>
-    <td>Minimum Salary</td>
-    <td>Maximum Salary</td>
-    <td>Created at</td>
-  </tr>
-
-  </thead>
-
-
-  <tbody>
-    <% @jobs.each do |job| %>
-
-    <tr>
-      <td><%= link_to(job.title, job_path(job))%></td>
-      <td><%= job.wage_lower_bound %></td>
-      <td><%= job.wage_upper_bound %></td>
-      <td><%= job.created_at %></td>
-    </tr>
-
-  </tbody>
-    <% end %>
-  </table>
-
-
-</div>
-<!--BOXF -->
-<div class="box-f blue">
+  </div>
+    <!--BOXF-end -->
 
 </div>
