@@ -213,23 +213,27 @@ height:700px;
 }
 /*footer 的CSS*/
 .footerevey{
-  height:84px;
-width:100%;
-  background-color: #181818;
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  right:0;
+  z-index: 98;
+  font-size: 18px;
+  background-color: rgba(0,0,0,0.5);
+  line-height: 50px;
+  height:50px;
+  width:100%;
 
 
 }
-
+.bannerevey{
+  line-height: 50px;
+}
 
 .footerright{
-
-height: 84px;
-
-
+height: 50px;
 float: right;
 text-align: center;
-line-height: 84px;
+
 
 }
 .footerright:hover{
@@ -237,8 +241,8 @@ line-height: 84px;
 }
 .invisiblegood{
     border-left: 2px solid #434343;
-    height:84px;
-    width:80px;
+    height:50px;
+    width:95px;
 
 }
 /*navbar 的CSS*/
@@ -250,8 +254,8 @@ background-color: black;
 
 /*banner 的CSS*/
 .bannerevey{
-  width:80px;
-height: 84px;
+  width:95px;
+height: 50px;
   background-color: rgba(0,0,0,0);
   border: 0px solid #434343;
 float: right;
@@ -261,7 +265,7 @@ position: fixed;
 bottom: 0;
 right:0;
 z-index: 99;
-padding-top: 10px;
+
 }
 .bannerevey:hover{
   color:white;
@@ -269,7 +273,7 @@ padding-top: 10px;
 .top1{
   text-decoration: none;
   color:#a5a5a4;
-  line-height: 84px;
+  line-height: 50px;
 
 }
 .top1:hover{
