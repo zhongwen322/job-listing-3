@@ -1,10 +1,20 @@
-<h3>Apply for<%= @job.title%></h3>
 
-<hr>
+<style media="screen">
+  .boxmargin{
+    margin:5%;
+  }
+</style>
 
-<%= simple_form_for [@job, @resume] do |f| %>
-  <%= f.input :content %>
-  <%= f.input :attachment %>
-  <%= f.submit "Send out" %>
-  
-<% end %>
+
+<div class="boxmargin">
+  <h3>Apply for<%= @job.title%></h3>
+
+  <hr>
+
+  <%= simple_form_for [@job, @resume] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :attachment %>
+    <%= f.submit "Send out" %>
+
+  <% end %>
+</div>
