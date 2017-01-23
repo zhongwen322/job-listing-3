@@ -1,17 +1,23 @@
+<style media="screen">
 
-<h1> Edit a job </h1>
-
-<%= simple_form_for [:admin, @job ] do |f| %>
-
-
-  <%= f.input :title %>
+</style>
 
 
-<%= f.input :description %>
-<%= f.input :wage_lower_bound, :label => "Minimum Salary" %>
-<%= f.input :wage_upper_bound, :label => "Maximum Salary" %>
-<%= f.input :contact_email %>
+<div class="">
+  <h1> Edit a job </h1>
 
-<%= f.input :is_hidden %>
-  <%= f.submit "Submit" %>
-<% end %>
+  <%= simple_form_for [:admin, @job ] do |f| %>
+
+
+    <%= f.input :title %>
+
+
+  <%= f.input :description %>
+  <%= f.input :wage_lower_bound, :label => "Minimum Salary" %>
+  <%= f.input :wage_upper_bound, :label => "Maximum Salary" %>
+  <%= f.input :contact_email %>
+
+  <%= f.input :is_hidden %>
+    <%= f.submit "Submit" %>
+  <% end %>
+</div>

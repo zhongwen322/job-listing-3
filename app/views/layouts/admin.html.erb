@@ -6,19 +6,63 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'%>
+    <style media="screen">
+      .siderow{
+        height: 35px;
+        background-color: rgba(0,0,0,0.5);
+
+        width:100%;
+        color:black;
+        line-height: 35px;
+        text-align: left;
+        padding-left: 10%;
+        font-size: 15px;
+      }
+      .siderow:hover{
+        background-color: #cdcdcd;
+
+      }
+.siderow a{
+  color: white;
+
+
+}
+.siderow a:hover{
+  color: black;
+}
+.sidebar-evey{
+  background-image: url(http://img02.tooopen.com/images/20160413/tooopen_sy_159225679483.jpg);
+  background-size: cover;
+}
+    </style>
   </head>
-  <body>
+  <body class="sidebar-evey">
     <div class="container-fluid">
       <%= render "common/navbar" %>
       <%= render "common/flashes" %>
 
       <div class="row">
-        <div class="col-md-2">
-          <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
-            <li class="active"><%= link_to("Jobs", admin_jobs_path)%></li>
 
-          </ul>
+        <!-- sidebar开始-->
+        <div class="col-md-2" style="margin-top:40px;">
+
+          <div class="siderow">
+            <span class="fa fa-list" style="margin-right:10px; color:white;"></span>
+            <a href="/admin/jobs">Jobs</a>
         </div>
+
+        <div class="siderow">
+          <span class="fa fa-plus" style="margin-right:10px; color:white;"></span>
+            <%= link_to("Add a job", new_admin_job_path) %>
+
+      </div>
+
+
+
+        </div>
+
+  <!--sidebar结束 -->
+
         <div class="col-md-10">
           <%= yield %>
         </div>

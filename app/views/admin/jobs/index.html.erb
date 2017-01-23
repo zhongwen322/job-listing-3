@@ -1,9 +1,7 @@
 <style media="screen">
 .btn-evey{
-
 width: 60px;
 font-weight: bold;
-
 }
 .btn-evey:hover{
 background-color: #051754;
@@ -14,15 +12,18 @@ thead{
   font-size: 16px;
   color:white;
   background: #312e32;
+  text-align: center;
 }
 tbody{
-  background-color: rgba(198,200,200,0.2);
+  background-color: rgba(255,255,255,0.7);
   color: #312e32;
 }
 tbody:hover{
   color:black;
 }
-
+.web{
+  background-image: #675c5b;
+}
 
 </style>
 
@@ -30,15 +31,8 @@ tbody:hover{
 <div class="web">
 
 
-<div class="pull-right">
-  <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default") %>
-</div>
 <br>
 <br>
-
-
-
-<h1 style="line-height:60px;">Job Listing</h1>
 
 
 <table class="table table-boldered">
@@ -62,14 +56,14 @@ tbody:hover{
   <%= link_to(job.title, admin_job_path(job)) %>
   </td>
 
-  <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job))%> </td>
-  <td> <%= job.wage_lower_bound %> </td>
-  <td> <%= job.wage_upper_bound %> </td>
+  <td  style="text-align: center;"> <%= link_to(job.resumes.count, admin_job_resumes_path(job))%> </td>
+  <td  style="text-align: center;"> <%= job.wage_lower_bound %> </td>
+  <td  style="text-align: center;">  <%= job.wage_upper_bound %> </td>
 
 
-      <td>
-  <%= link_to("Edit", edit_job_path(job)) %> |
-   <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %> |
+      <td  style="text-align: center;">
+  <%= link_to("", edit_job_path(job), :class => "fa fa-pencil")%> |
+   <%= link_to("", admin_job_path(job), :class => "fa fa-trash-o", :method => :delete, :data => { :confirm => "Are you sure?" }) %> |
 
   <% if job.is_hidden %>
   <%= link_to("Publish", publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default btn-evey")%>
@@ -80,17 +74,12 @@ tbody:hover{
 
       </td>
 
-      <td>
+      <td  style="text-align: center;">
   <%= job.created_at %>
       </td>
 
     </tr>
   </tbody>
-
-
-
-
-
 
 
   <% end %>
