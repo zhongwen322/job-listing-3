@@ -1,0 +1,90 @@
+<style media="screen">
+.btn-evey{
+background-color: skyblue;
+width: 60px;
+font-weight: bold;
+
+}
+.btn-evey:hover{
+background-color: #051754;
+color: white;
+}
+.btn-add-a-job:hover{
+  background-image: -moz-linear-gradient( 90deg, rgb(26,46,111) 0%, rgb(186,245,242) 100%);
+  background-image: -webkit-linear-gradient( 90deg, rgb(26,46,111) 0%, rgb(186,245,242) 100%);
+  background-image: -ms-linear-gradient( 90deg, rgb(26,46,111) 0%, rgb(186,245,242) 100%);
+  color: white;
+}
+</style>
+
+
+<div class="web">
+
+
+<div class="pull-right">
+  <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default btn-add-a-job") %>
+</div>
+<br>
+<br>
+
+
+
+
+
+<table class="table table-boldered">
+  <thead>
+    <tr>
+      <td>Job Title</td>
+      <td>Received Resume</td>
+      <td>Minimum Salary</td>
+      <td>Maximum Salary</td>
+      <td>Management Option</td>
+      <td>Created Time</td>
+    </tr>
+
+  </thead>
+
+  <tbody>
+    <% @jobs.each do |job| %>
+    <tr>
+  <td>
+  <%= render_job_status(job) %>
+  <%= link_to(job.title, admin_job_path(job)) %>
+  </td>
+
+  <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job))%> </td>
+  <td> <%= job.wage_lower_bound %> </td>
+  <td> <%= job.wage_upper_bound %> </td>
+
+
+      <td>
+  <%= link_to("Edit", edit_job_path(job)) %> |
+   <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %> |
+
+  <% if job.is_hidden %>
+  <%= link_to("Publish", publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default btn-evey")%>
+  <% else %>
+
+  <%= link_to("Hide", hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default btn-evey") %>
+  <% end %>
+
+      </td>
+
+      <td>
+  <%= job.created_at %>
+      </td>
+
+    </tr>
+  </tbody>
+
+
+
+
+
+
+
+  <% end %>
+
+</table>
+
+</div>
