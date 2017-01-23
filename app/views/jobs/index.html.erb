@@ -1,189 +1,54 @@
-<style media="screen">
-p{
-  color:white;
-  text-align: center;
-}
-</style>
 
-<div class="outsidebox">
+<!--BOXE -->
+<div class="box-e grey" id="fourth">
+  <div class="eveyboxe">
+  <div class="dropdown clearfix pull-right">
 
-  <!-- BOXA-->
-  <div class="box-a grey">
-    <div class="a">
-      BUILDING CAREERS,
-      <br>LEADING TO SUCCESS.
-      </div>
-  <p class="careerpartners">
-  Career Partners ——Xinshengdaxue’s employment site.
-  <br>Search jobs at Career Partners. Find work or recruit the ideal candidates.
-  </p>
+    <button class="btn btn-default dropdown-toggle orderevey" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-exapanded="true">
+    Order
+      <span class="caret"></span>
+    </button>
 
-  </div>
-      <!--BOXA-end -->
-
-
-
-  <!--BOXB -->
-  <div class="box-b blue" id="first">
-
-<div class="b-textbox">
-  <div class="b-textboxinvisible">
-  <div class="b-title">
-    <span style="color:white; font-size:18px;">Xinshengdaxue</span>
-  </div>
-  <div class="small-title">
-    CAREER <br>PARTNERS
-  </div>
-
-    <p class="b-p" style="font-size: 18px;">
-Career Partners is Xinshengdaxue’s
-employment site. Not only can you
-search jobs and recruit the ideal
-candidates, but also find more about
-Ruby on Rails and your career path.
-    </p>
-</div>
-
-</div>
-
-  </div>
-      <!--BOXEB-end -->
-
-
-
-  <!--BOXC -->
-  <div class="box-c grey" id="second">
-<div class="box-c-textbox">
-  <div class="box-c-textbox-invisible">
-
-      <h1>CAREER PARTNERS</h1>
-
-<br>PHONE:
-<br>+64 27 3196 191
-
-<br><br>EMAIL:
-<br>zhongwen322@gmail.com
-
-<br><br>WECHAT:
-<br>zhongweninri
-<br><br>
-<button type="button" name="button" class="btn btn-default eveybtn" style="background-color:#181818; font-size:20px; color:#a5a4a4;">
-<a href="Mailto:zhongwen322@gmail.com">Email Us</a>
-</button>
-
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+      <li> <%= link_to("By Lower Bound", jobs_path(:order => "by_lower_bound")) %> </li>
+      <li> <%= link_to("By Upper Bound", jobs_path(:order => "by_upper_bound")) %> </li>
+      <li> <%= link_to("By Created Time", jobs_path) %> </li>
+    </ul>
 
 
   </div>
-</div>
-  </div>
-      <!--BOXC-end -->
+
+  <h1 style="color:white;text-shadow:1px 1px 1px black;">Job Listing</h1>
 
 
-  <!-- BOXD-->
-  <div class="box-d blue" id="third">
-    <div class="box-d-textbox">
-      <div class="box-d-left">
-        <div class="box-d-left1">
-<h1>Job Titles For <br>‘Ruby on Rails’ <br>Skill & Their <br>Remunerations</h1>
+  <table class="table table-boldered table-inverse">
 
-<br>Here’s a list of Job titles and their salaries for Ruby on Rails skills:
+  <thead class="thead-inverse">
 
+  <tr style="text-align:center;">
+    <td>Job Title</td>
+    <td>Minimum Salary</td>
+    <td>Maximum Salary</td>
+    <td>Created at</td>
+  </tr>
 
-        </div>
-      </div>
-      <div class="box-d-right">
-          <div class="box-d-right1">
+  </thead>
 
 
-Software Engineer Want $95,000
-<br>Software Engineer Ruby $97,000
-<br>Ruby ON Rails Engineer $95,000
-<br>Ruby on Rail $99,000
-<br>Junior Ruby Developer $66,000
-<br>Senior Ruby Developer $106,000
-<br>Ruby on Rails Developer $98,000
-<br>Senior Javascript Web Developer $110,000
-<br>Ruby Developer $87,000
-<br>Ruby Software Engineer $87,000
-<br>Ror Developer $107,000
-<br>Stack Software Engineer $102,000
-<br>Rails Hacker $87,000
-<br>Rails Developer $90,000
-<br>Web Application Engineer $102,000
-
-          </div>
-      </div>
-    </div>
-
-  </div>
-      <!--BOXD-end -->
-
-
-  <!--BOXE -->
-  <div class="box-e grey" id="fourth">
-    <div class="eveyboxe">
-    <div class="dropdown clearfix pull-right">
-
-      <button class="btn btn-default dropdown-toggle orderevey" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-exapanded="true">
-      Order
-        <span class="caret"></span>
-      </button>
-
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-        <li> <%= link_to("By Lower Bound", jobs_path(:order => "by_lower_bound")) %> </li>
-        <li> <%= link_to("By Upper Bound", jobs_path(:order => "by_upper_bound")) %> </li>
-        <li> <%= link_to("By Created Time", jobs_path) %> </li>
-      </ul>
-
-
-    </div>
-
-    <h1 style="color:white;text-shadow:1px 1px 1px black;">Job Listing</h1>
-
-
-    <table class="table table-boldered table-inverse">
-
-    <thead class="thead-inverse">
+  <tbody style="text-align:center;">
+    <% @jobs.each do |job| %>
 
     <tr style="text-align:center;">
-      <td>Job Title</td>
-      <td>Minimum Salary</td>
-      <td>Maximum Salary</td>
-      <td>Created at</td>
+      <td class="tdevey" style="font-size:18px; font-weight:bold; color:black;"><%= link_to(job.title, job_path(job))%></td>
+      <td><%= job.wage_lower_bound %></td>
+      <td><%= job.wage_upper_bound %></td>
+      <td><%= job.created_at %></td>
     </tr>
 
-    </thead>
-
-
-    <tbody style="text-align:center;">
-      <% @jobs.each do |job| %>
-
-      <tr style="text-align:center;">
-        <td class="tdevey" style="font-size:18px; font-weight:bold; color:black;"><%= link_to(job.title, job_path(job))%></td>
-        <td><%= job.wage_lower_bound %></td>
-        <td><%= job.wage_upper_bound %></td>
-        <td><%= job.created_at %></td>
-      </tr>
-
-    </tbody>
-      <% end %>
-    </table>
+  </tbody>
+    <% end %>
+  </table>
 
 </div>
-  </div>
-    <!--BOXE-end -->
-  <!--BOXF -->
-  <div class="box-f blue">
-<div class="box-f-text">
-  <ul class="text-f">
-    <li class="text-f"> <a href="#first">ABOUT US ○</a></li>
-    <li class="text-f"><a href="#second">CONTACT US ○</a></li>
-    <li class="text-f"><a href="#third">CAREER PLAN ○</a></li>
-    <li class="text-f"><a href="#fourth">JOB LISTING ○</a></li>
-  </ul>
-
 </div>
-  </div>
-    <!--BOXF-end -->
-
-</div>
+  <!--BOXE-end -->
