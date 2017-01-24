@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "這個種子檔會自動建立一個admin帳號, 並且創建 10 個 public jobs, 以及10個hidden jobs"
 
-create_account = User.create([email: 'zhongwen322@gmail.com', password: 'wyyzzl813', password_confirmation: 'zhongwen322@gmail.com', is_admin: 'true'])
+create_account = User.create([email: 'zhongwen322@gmail.com', password: 'wyyzzl813', password_confirmation: 'wyyzzl813', is_admin: 'true'])
 puts "Admin account created."
 
 create_account_user = User.create([email: "b@b.com", password:"123456",password_confirmation: "123456",is_admin:"false"])
