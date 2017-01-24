@@ -1,14 +1,30 @@
 
-<div class="boxmargin" style="margin:5%;">
-  <h1>Edit a job</h1>
-  <%= simple_form_for @job do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :wage_lower_bound, :label => "Minimum Salary" %>
-  <%= f.input :wage_upper_bound, :label => "Maximum Salary" %>
-  <%= f.input :contact_email %>
+<style media="screen">
+.editajob-evey{
+  background-image: url(http://img02.tooopen.com/images/20160413/tooopen_sy_159225679483.jpg);
+  background-size: cover;
+  padding-top: 5%;
+  padding-bottom: 6%;
+}
+.nomargin{
+  margin: 0;
+}
+</style>
+<div class="editajob-evey">
 
-  <%= f.input :is_hidden %>
-  <%= f.submit "Submit" %>
-  <% end %>
+  <div class="boxmargin" style="margin-left:5%; margin-right:5%;">
+    <h1 class="nomargin">Edit a job</h1>
+    <%= simple_form_for @job do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :wage_lower_bound, :label => "Minimum Salary" %>
+    <%= f.input :wage_upper_bound, :label => "Maximum Salary" %>
+    <%= f.input :contact_email %>
+
+    <%= f.input :is_hidden %>
+    <%= f.submit "Submit" %>
+    <% end %>
+  </div>
+
+
 </div>
