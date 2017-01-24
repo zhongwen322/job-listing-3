@@ -1,4 +1,7 @@
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
+
 <style media="screen">
 p{
   color:white;
@@ -210,6 +213,25 @@ Software Engineer Want $95,000
 
 <!--BOXE END-->
 
+<!--SLIDESHOW-->
+<div class="showbox"  style="background-color:#333231;">
+
+
+<h2 style="margin:0;"></h2>
+
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="https://ooo.0o0.ooo/2017/01/24/5886df261d822.png" style="width:100%">
+  <img class="mySlides" src="https://ooo.0o0.ooo/2017/01/24/5886df26af70e.jpg" style="width:100%">
+  <img class="mySlides" src="https://ooo.0o0.ooo/2017/01/24/5886df26c236d.jpg" style="width:100%">
+
+
+  <a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
+  <a class="w3-btn-floating w3-display-right" onclick="plusDivs(1)">&#10095;</a>
+</div>
+
+</div>
+<!--SLIDESHOW END-->
+
 
   <!--BOXF -->
   <div class="box-f blue">
@@ -226,3 +248,25 @@ Software Engineer Want $95,000
     <!--BOXF-end -->
 
 </div>
+
+<script>
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+
+</script>
